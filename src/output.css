@@ -6,7 +6,19 @@
     --font-sans: 'Quicksand', sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-neutral-50: #181d27;
+    --color-neutral-100: #252b37;
+    --color-neutral-200: #414651;
+    --color-neutral-300: #535862;
+    --color-neutral-400: #717680;
+    --color-neutral-500: #a4a7ae;
+    --color-neutral-600: #aaaaaa;
+    --color-neutral-700: #e9eaeb;
+    --color-neutral-800: #dfdfdf;
+    --color-neutral-900: #dedddc;
     --color-neutral-950: #fafafa;
+    --color-black: #000000;
     --color-white: #ffffff;
     --spacing: 0.25rem;
     --default-transition-duration: 150ms;
@@ -168,11 +180,102 @@
   }
 }
 @layer utilities {
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
   .grid {
     display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .table {
+    display: table;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .fill-black {
+    fill: var(--color-black);
+  }
+  .stroke-\[\#0A0D12\] {
+    stroke: #0A0D12;
+  }
+  .stroke-neutral-25 {
+    stroke: var(--color-neutral-25);
+  }
+  .p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .lg\:flex {
+    @media (width >= 64rem) {
+      display: flex;
+    }
+  }
+  .lg\:hidden {
+    @media (width >= 64rem) {
+      display: none;
+    }
+  }
+  .dark\:fill-white {
+    @media (prefers-color-scheme: dark) {
+      fill: var(--color-white);
+    }
+  }
+  .dark\:stroke-neutral-25 {
+    @media (prefers-color-scheme: dark) {
+      stroke: var(--color-neutral-25);
+    }
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
@@ -232,6 +335,16 @@
       }
     }
   }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-shadow {
   syntax: "*";
@@ -305,6 +418,8 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-outline-style: solid;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
