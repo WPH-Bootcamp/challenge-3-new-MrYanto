@@ -126,7 +126,8 @@
 }
 
 @layer components {
-  .container {
+  /* Not named `.container` — Tailwind's `container` utility adds max-width breakpoints. */
+  .page-padding {
     @apply px-4 lg:px-11xl;
   }
 
