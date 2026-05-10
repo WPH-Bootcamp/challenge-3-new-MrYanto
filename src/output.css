@@ -250,6 +250,9 @@
   .h-\[250px\] {
     height: 250px;
   }
+  .h-\[747px\] {
+    height: 747px;
+  }
   .h-auto {
     height: auto;
   }
@@ -426,6 +429,16 @@
       display: none;
     }
   }
+  .lg\:h-\[659px\] {
+    @media (width >= 64rem) {
+      height: 659px;
+    }
+  }
+  .lg\:h-\[747px\] {
+    @media (width >= 64rem) {
+      height: 747px;
+    }
+  }
   .lg\:w-\[197px\] {
     @media (width >= 64rem) {
       width: 197px;
@@ -454,6 +467,11 @@
   .lg\:px-4 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 4);
+    }
+  }
+  .lg\:py-0 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 0);
     }
   }
   .lg\:py-\[146px\] {
