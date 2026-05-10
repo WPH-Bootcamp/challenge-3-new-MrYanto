@@ -134,4 +134,19 @@
   .btn {
     @apply inset-shadow-[4px_4px_4px_0px_rgba(255,255,255,0.25)] bg-primary-200 rounded-full p-2 gap-1 text-white hover:inset-shadow-[4px_4px_4px_0px_rgba(255,255,255,0)] hover:shadow-lg transition-shadow duration-300;
   }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
 }
