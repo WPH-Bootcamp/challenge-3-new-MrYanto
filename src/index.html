@@ -14,8 +14,12 @@
   </head>
   <body>
     <header
-      class="page-padding sticky top-0 flex w-full items-center justify-between py-6"
+      class="z-50 page-padding sticky top-0 flex w-full items-center justify-between py-6 bg-white/50 dark:bg-black/50 backdrop-blur-2xl"
     >
+      <div
+        class="absolute top-full left-0 w-screen h-screen bg-white dark:bg-black z-0 hidden lg:hidden"
+        id="bg-nav"
+      ></div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="141"
@@ -111,11 +115,51 @@
 
       <button
         id="navbar-btn"
-        class="btn lg:block lg:static lg:w-[197px] hidden absolute top-[calc(100%*4.3)] w-[calc(100%-32px)]"
+        class="btn z-10 lg:block lg:static lg:w-[197px] hidden absolute top-[calc(100%*4.3)] w-[calc(100%-32px)]"
       >
         Let's Talk
       </button>
     </header>
+
+    <main>
+      <section
+        class="flex-col lg:flex-row page-padding flex items-center pt-[61px] lg:py-[146px]"
+      >
+        <div class="max-w-[653px] flex flex-col gap-[40px] z-30">
+          <div class="flex flex-col gap-4 h-auto">
+            <h1
+              class="text-display-lg lg:text-display-3xl font-bold leading-11 lg:leading-17"
+            >
+              Your Tech Partner for
+              <span class="text-primary-200">Smarter Growth</span>
+            </h1>
+            <p
+              class="text-md lg:text-xl font-semibold leading-[30px] lg:leading-[34px]"
+            >
+              We deliver tailored IT solutions to help you scale with speed and
+              confidence.
+            </p>
+          </div>
+
+          <button
+            class="p-2 gap-1 rounded-full bg-primary-200 inner-white-shadow w-full lg:w-[200px]"
+          >
+            Let's Talk
+          </button>
+        </div>
+
+        <img
+          src="../assets/images/PhoneDark.png"
+          alt="Phone Mockup"
+          class="hidden mt-10 w-[clamp(24.44rem, 53.36vw, 46.69rem)] lg:absolute lg:top-[-50px] lg:right-0 z-10 dark:block"
+        />
+        <img
+          src="../assets/images/PhoneLight.png"
+          alt="Phone Mockup"
+          class="mt-10 w-[clamp(24.44rem, 53.36vw, 46.69rem)] lg:absolute lg:top-[-50px] lg:right-0 z-10 dark:hidden"
+        />
+      </section>
+    </main>
   </body>
 
   <script>
@@ -123,12 +167,14 @@
     const close = document.getElementById('close-icon');
     const nav = document.getElementById('navbar');
     const navbtn = document.getElementById('navbar-btn');
+    const navbg = document.getElementById('bg-nav');
 
     function openMenu() {
       menu.classList.add('hidden');
       close.classList.remove('hidden');
       nav.classList.remove('hidden');
       navbtn.classList.remove('hidden');
+      navbg.classList.remove('hidden');
       nav.classList.add('flex', 'flex-col');
     }
 
@@ -136,6 +182,7 @@
       close.classList.add('hidden');
       nav.classList.add('hidden');
       navbtn.classList.add('hidden');
+      navbg.classList.add('hidden');
       nav.classList.remove('flex', 'flex-col');
       menu.classList.remove('hidden');
     }

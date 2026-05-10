@@ -121,7 +121,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-neutral-950 text-neutral-25;
+    @apply font-sans bg-white dark:bg-black text-neutral-25;
   }
 }
 
